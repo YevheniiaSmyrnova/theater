@@ -9,12 +9,11 @@ services:
     - POSTGRES_PASSWORD=ahqu4eeF
     volumes:
     - ./:/code
-#    command: pg_restore -c -U cryptosite /code/db.dump
 
   django:
     image: gasoid/python3.5-postgresql
     environment:
-    - DJANGO_SETTINGS_MODULE=cryptosite.settings
+    - DJANGO_SETTINGS_MODULE=theatre.settings
     volumes:
     - ./:/code
     working_dir: /code
