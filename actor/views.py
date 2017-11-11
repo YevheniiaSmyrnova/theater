@@ -8,7 +8,10 @@ from .models import Actor
 from .serializers import ActorSerializer
 
 
-class ListActorView(generics.ListCreateAPIView):
+class ActorListCreateView(generics.ListCreateAPIView):
+    """
+    Actor list or create new actor
+    """
     queryset = Actor.objects.all()
     serializer_class = ActorSerializer
 
@@ -29,3 +32,11 @@ class ListActorView(generics.ListCreateAPIView):
             return Response(data=self.serializer_class(actor).data,
                             status=status.HTTP_201_CREATED, headers=headers)
         return Response(status=status.HTTP_403_FORBIDDEN)
+
+
+class ActorRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Update or delete information about actor
+    """
+    queryset = Actor.objects.all()
+    serializer_class = ActorSerializer
