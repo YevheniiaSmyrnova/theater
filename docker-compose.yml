@@ -24,3 +24,14 @@ services:
     ports:
     - "9000:9000"
     command: /bin/bash -c "pip install -r requirements.txt && exec invoke run"
+
+  angular:
+    image: node:8.1.3
+    volumes:
+    - ./web:/web
+    working_dir: /web
+    ports:
+    - "3000:3000"
+    links:
+    - django
+    command: /bin/bash -c "npm install && npm start"
