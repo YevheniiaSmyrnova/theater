@@ -11,7 +11,7 @@ class Actor(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     position = models.CharField(max_length=50, null=True, blank=True)
-    photo = models.ImageField(upload_to='photos/',)
+    photo = models.ImageField(upload_to='photos/', null=True, blank=True)
 
     def __str__(self):
         """
