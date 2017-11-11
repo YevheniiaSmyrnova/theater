@@ -1,3 +1,23 @@
-from django.shortcuts import render
+"""
+Performance view modal
+"""
+from rest_framework import generics
 
-# Create your views here.
+from .models import Performance
+from .serializers import PerformanceSerializer
+
+
+class PerformanceListCreateView(generics.ListCreateAPIView):
+    """
+    Performance list or create new performance
+    """
+    queryset = Performance.objects.all()
+    serializer_class = PerformanceSerializer
+
+
+class PerformanceRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Update or delete information about performance
+    """
+    queryset = Performance.objects.all()
+    serializer_class = PerformanceSerializer

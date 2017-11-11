@@ -24,6 +24,7 @@ schema_view = get_swagger_view(title='Cryptosite API')
 
 main_url = [
     url(r'^actor/', include('actor.urls', namespace='actor')),
+    url(r'^performance/', include('performance.urls', namespace='performance')),
     url(r'^admin/', admin.site.urls),
 ]
 
