@@ -1,0 +1,19 @@
+.page-content {
+    margin-left:15%;
+    margin-right:15%;
+}
+
+@media (max-width: 1000px) {
+    .page-content {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }        
+}
+
+/*@media screen and (min-width: 480px) {
+    .page-content {
+        margin-left:1%;
+        margin-right:1%;
+    }        
+}*/
