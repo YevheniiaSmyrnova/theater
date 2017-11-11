@@ -5,7 +5,7 @@ services:
     expose:
     - 5432
     environment:
-    - POSTGRES_USER=theatre
+    - POSTGRES_USER=theater
     - POSTGRES_PASSWORD=ahqu4eeF
     volumes:
     - ./:/code
@@ -13,7 +13,7 @@ services:
   django:
     image: gasoid/python3.5-postgresql
     environment:
-    - DJANGO_SETTINGS_MODULE=theatre.settings
+    - DJANGO_SETTINGS_MODULE=theater.settings
     volumes:
     - ./:/code
     working_dir: /code
