@@ -15,7 +15,7 @@ class Performance(models.Model):
     producer = models.ManyToManyField(Actor, related_name="performance_producer")
     duration = models.TimeField()
     sort_description = models.CharField(max_length=255)
-    description = models.TextField(max_length=50)
+    description = models.TextField()
 
     def __str__(self):
         """
