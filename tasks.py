@@ -17,6 +17,8 @@ def wait_port_is_open(host, port):
 @task
 def init_db(ctx):
     wait_port_is_open('db', 5432)
+    ctx.run('python manage.py dbshell < clear.sql')
+    ctx.run('python manage.py dbshell < db.dump')
     ctx.run('python manage.py makemigrations')
     ctx.run('python manage.py migrate --noinput')
     ctx.run('python manage.py collectstatic --noinput')
